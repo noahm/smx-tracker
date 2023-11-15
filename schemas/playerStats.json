@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": ["object", "null"],
+	"properties": {
+		"id": { "type": "number" },
+		"username": { "type": "string" },
+		"picture_path": { "type": "string" },
+		"rank": { "type": "number" },
+		"rank_region": { "type": "number" },
+		"weekly_rank": { "type": "number" },
+		"rank_beginner": { "type": "number" },
+		"rank_easy": { "type": "number" },
+		"rank_hard": { "type": "number" },
+		"rank_wild": { "type": "number" },
+		"rank_dual": { "type": "number" },
+		"rank_full": { "type": "number" },
+		"rank_region_beginner": { "type": "number" },
+		"rank_region_easy": { "type": "number" },
+		"rank_region_hard": { "type": "number" },
+		"rank_region_wild": { "type": "number" },
+		"rank_region_dual": { "type": "number" },
+		"rank_region_full": { "type": "number" }
+	},
+  "additionalProperties": false,
+	"required": ["id", "username", "picture_path"],
+  "default": null
+}
