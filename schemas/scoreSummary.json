@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "basic": {
+      "$ref": "#/definitions/maybeModeSummary"
+    },
+    "easy": {
+      "$ref": "#/definitions/maybeModeSummary"
+    },
+    "hard": {
+      "$ref": "#/definitions/maybeModeSummary"
+    },
+    "wild": {
+      "$ref": "#/definitions/maybeModeSummary"
+    },
+    "dual": {
+      "$ref": "#/definitions/maybeModeSummary"
+    },
+    "full": {
+      "$ref": "#/definitions/maybeModeSummary"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "basic",
+    "easy",
+    "hard",
+    "wild",
+    "dual",
+    "full"
+  ],
+  "default": {
+    "basic": null,
+    "easy": null,
+    "hard": null,
+    "wild": null,
+    "dual": null,
+    "full": null
+  },
+  "definitions": {
+    "summary": {
+      "type": "object",
+      "properties": {
+        "passes": {
+          "type": "number"
+        },
+        "fullCombos": {
+          "type": "number"
+        },
+        "threeStar": {
+          "type": "number"
+        },
+        "fourStar": {
+          "type": "number"
+        },
+        "fiveStar": {
+          "type": "number"
+        },
+        "sixStar": {
+          "type": "number"
+        },
+        "apcs": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "passes",
+        "fullCombos",
+        "threeStar",
+        "fourStar",
+        "fiveStar",
+        "sixStar",
+        "apcs"
+      ]
+    },
+    "modeSummary": {
+      "type": "object",
+      "properties": {
+        "inTotal": {
+          "$ref": "#/definitions/summary"
+        },
+        "byLevel": {
+          "type": "object",
+          "patternProperties": {
+            "$[0-9]+$": {
+              "$ref": "#/definitions/summary"
+            }
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "inTotal",
+        "byLevel"
+      ]
+    },
+    "maybeModeSummary": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/modeSummary"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

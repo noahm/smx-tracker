@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"basic": { "type": ["string", "null"] },
+		"easy": { "type": ["string", "null"] },
+		"hard": { "type": ["string", "null"] },
+		"wild": { "type": ["string", "null"] },
+		"dual": { "type": ["string", "null"] },
+		"full": { "type": ["string", "null"] }
+	},
+  "additionalProperties": false,
+	"required": ["basic", "easy", "hard", "wild", "dual", "full"],
+  "default": {
+    "basic": null,
+    "easy": null,
+    "hard": null,
+    "wild": null,
+    "dual": null,
+    "full": null
+  }
+}

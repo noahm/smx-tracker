@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { klona as clone } from "klona/json";
 import type NodeCG from "@nodecg/types";
 
+type UseReplcantOpts<T> = NodeCG.Replicant.Options<T> & { namespace?: string }
+
 /**
  * Subscribe to a replicant, returns tuple of the replicant value and `setValue` function.
  * The component using this function gets re-rendered when the value is updated.
@@ -10,11 +12,13 @@ import type NodeCG from "@nodecg/types";
  * @param initialValue Initial value to pass to `useState` function
  * @param options Options object. Currently supports the optional `namespace` option
  */
-export const useReplicant = <T>(
+export function useReplicant<T>(replicantName: string, initialValue: T, options?: UseReplcantOpts<T>): [T, (newVal: T) => void];
+export function useReplicant<T>(replicantName: string, initialValue?: undefined, options?: UseReplcantOpts<T>): [T | undefined, (newVal: T) => void];
+export function useReplicant<T>(
   replicantName: string,
   initialValue?: T,
-  options?: NodeCG.Replicant.Options<T> & { namespace?: string }
-): [T | undefined, (newValue: T) => void] => {
+  options?: UseReplcantOpts<T>
+): [T | undefined, (newValue: T) => void] {
   const [value, updateValue] = useState<T | undefined>(initialValue);
 
   const replicantOptions =
@@ -62,4 +66,4 @@ export const useReplicant = <T>(
       replicant.value = newValue;
     },
   ];
-};
+}

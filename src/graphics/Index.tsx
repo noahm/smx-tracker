@@ -4,7 +4,7 @@ import { PlayerStats } from '../common/playerInfo';
 export function Index() {
 	return (
 		<>
-			<PlayerStats />
+			<PlayerStats silentFailure />
 		</>
 	);
 }
