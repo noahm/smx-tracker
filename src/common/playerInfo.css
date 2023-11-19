@@ -1,0 +1,13 @@
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid black;
+  font-variant-numeric: tabular-nums;
+  padding: 5px;
+}
+td {
+  text-align: right;
+}

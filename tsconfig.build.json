@@ -10,7 +10,7 @@
     "module": "commonjs",
 
     // Module resolution
-    "moduleResolution": "Node10",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
 
@@ -23,9 +23,5 @@
     "sourceMap": true,
     "inlineSourceMap": false
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "node_modules/@nodecg/types/augment-window.d.ts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "node_modules/@nodecg/types/augment-window.d.ts"]
 }

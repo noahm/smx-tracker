@@ -1,12 +1,12 @@
 import type NodeCG from '@nodecg/types';
 import type { PlayerStats, PlayerId, LastUpdated, ScoreSummary } from '../types/schemas';
-import { UserHighscoresInfo } from './types';
+import { type UserHighscoresInfo } from './types';
 import { newModeSummary, newScoreSummary, newSummary, processHighscore } from './utils';
 
 type DiffCategory = keyof LastUpdated;
 
-// poll for updated play data every 30s
-const DATA_POLLING_RATE = 30_000;
+// poll for updated play data every 10s
+const DATA_POLLING_RATE = 10_000;
 
 module.exports = function (nodecg: NodeCG.ServerAPI) {
   nodecg.log.info("Hello, from your bundle's extension!");
@@ -15,7 +15,9 @@ module.exports = function (nodecg: NodeCG.ServerAPI) {
 
   playerIdReplicant.on('change', (newValue) => {
     if (newValue) {
-      updatePlayerStats(nodecg, newValue);
+      updatePlayerStats(nodecg, newValue).catch((e) => {
+        nodecg.log.error(e);
+      });
     }
   });
 
@@ -28,8 +30,9 @@ async function maybeRefreshStats(this: NodeCG.ServerAPI) {
   if (!playerIdRep.value) {
     return;
   }
+
   const playerId = playerIdRep.value;
-  const req = await fetch(`https://statmaniax.com/api/user_last_played/${playerId}`);
+  const req = await fetch(`https://statmaniax.com/api/get_users_latest_scores/${playerId}`);
   const latestTimes: LastUpdated = await req.json().catch<LastUpdated>(() => ({
     basic: null,
     dual: null,
@@ -38,10 +41,10 @@ async function maybeRefreshStats(this: NodeCG.ServerAPI) {
     hard: null,
     wild: null,
   }));
-  const modesToUpdate = [] as Array<DiffCategory>;
+  const modesToUpdate = [] as DiffCategory[];
   const lastUpdatedRep = this.Replicant<LastUpdated>('lastUpdated');
   const lastUpdated = lastUpdatedRep.value!;
-  for (const mode of Object.keys(latestTimes) as Array<DiffCategory>) {
+  for (const mode of Object.keys(latestTimes) as DiffCategory[]) {
     const lastUpdate = lastUpdated[mode];
     const remoteUpdate = latestTimes[mode];
     // if (!remoteUpdate) {
@@ -54,7 +57,9 @@ async function maybeRefreshStats(this: NodeCG.ServerAPI) {
 
   for (const mode of modesToUpdate) {
     this.log.info(`Pulling updated scores for ${mode} mode`);
-    updateScoreDataForMode(this, mode, playerId);
+    updateScoreDataForMode(this, mode, playerId).catch((e) => {
+      this.log.error(e);
+    });
   }
 }
 
@@ -64,6 +69,7 @@ async function updatePlayerStats(nodecg: NodeCG.ServerAPI, playerId: number | un
     statsReplicant.value = undefined;
     return;
   }
+
   if (playerId === statsReplicant.value?.id) {
     nodecg.log.info('defer player update, already fetched');
     return;
@@ -82,7 +88,7 @@ async function updatePlayerStats(nodecg: NodeCG.ServerAPI, playerId: number | un
 }
 
 async function updateScoreDataForMode(nodecg: NodeCG.ServerAPI, mode: DiffCategory, playerId: number) {
-  let requestMode = mode === 'basic' ? 'beginner' : mode;
+  const requestMode = mode === 'basic' ? 'beginner' : mode;
   const req = await fetch(`https://statmaniax.com/api/get_user_highscores_info/${playerId}/${requestMode}`);
   const resp: UserHighscoresInfo = await req.json();
 
@@ -96,26 +102,32 @@ async function updateScoreDataForMode(nodecg: NodeCG.ServerAPI, mode: DiffCatego
       levelSummary.passes++;
       summary.inTotal.passes++;
     }
+
     if (score.fullCombo) {
       levelSummary.fullCombos++;
       summary.inTotal.fullCombos++;
     }
-    if (score.starsEarned == 3) {
+
+    if (score.starsEarned === 3) {
       levelSummary.threeStar++;
       summary.inTotal.threeStar++;
     }
-    if (score.starsEarned == 4) {
+
+    if (score.starsEarned === 4) {
       levelSummary.fourStar++;
       summary.inTotal.fourStar++;
     }
-    if (score.starsEarned == 5) {
+
+    if (score.starsEarned === 5) {
       levelSummary.fiveStar++;
       summary.inTotal.fiveStar++;
     }
-    if (score.starsEarned == 6) {
+
+    if (score.starsEarned === 6) {
       levelSummary.sixStar++;
       summary.inTotal.sixStar++;
     }
+
     if (score.score === 100_000) {
       levelSummary.apcs++;
       summary.inTotal.apcs++;
