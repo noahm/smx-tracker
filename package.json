@@ -35,6 +35,12 @@
         "width": 800,
         "height": 600,
         "singleInstance": false
+      },
+      {
+        "file": "mode-count.html",
+        "width": 300,
+        "height": 200,
+        "singleInstance": false
       }
     ]
   },

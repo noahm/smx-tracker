@@ -1,9 +1,8 @@
 span.animated {
-  --color-primary: orange;
   font-weight: 700;
   font-size: 24pt;
   display: inline-block;
-  color: var(--color-primary, #000);
-  text-shadow: var(--color-primary, #000) 0px 0px 0px;
+  color: orange;
+  text-shadow: currentColor 0px 0px 0px;
   -webkit-text-stroke: #fff 1px;
 }

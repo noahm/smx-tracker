@@ -2,12 +2,13 @@ import React from 'react';
 import { useReplicant } from '../common/useReplicant';
 import { FieldForm } from '../common/fieldForm';
 import { PlayerStats } from '../common/playerInfo';
-import { type DisplayMode, type PlayerId } from '../types/schemas';
+import type { DisplayMode, PlayerId, Summary } from '../types/schemas';
 
 export function Panel() {
   const [playerId, updatePlayerId] = useReplicant<PlayerId | undefined>('playerId');
   const [displaymode, updateDisplayMode] = useReplicant<DisplayMode>('displayMode');
   const [displayStyle, updateDisplayStyle] = useReplicant<'inTotal' | 'byLevel'>('displayStyle', 'inTotal');
+  const [singleCountStat, updateSingleCountStat] = useReplicant<keyof Summary>('singleCountStat', 'fullCombos');
 
   const strPlayerId = playerId ? playerId.toString() : '';
 
@@ -46,6 +47,23 @@ export function Panel() {
       </p>
 
       <p>
+        Stat for solo count:{' '}
+        <select
+          value={singleCountStat}
+          onChange={(e) => {
+            updateSingleCountStat(e.currentTarget.value as keyof Summary);
+          }}>
+          <option value="passes">Passes</option>
+          <option value="fullCombos">Full Combos</option>
+          <option value="threeStar">3 Stars</option>
+          <option value="fourStar">4 Stars</option>
+          <option value="fiveStar">5 Stars</option>
+          <option value="sixStar">6 Stars</option>
+          <option value="apcs">APCs</option>
+        </select>
+      </p>
+
+      <p>
         Display Style:{' '}
         <select
           value={displayStyle}
@@ -56,8 +74,6 @@ export function Panel() {
           <option value="byLevel">By Difficulty Lvl</option>
         </select>
       </p>
-
-      <PlayerStats />
     </>
   );
 }

@@ -3,6 +3,7 @@ import './animatedNumber.css';
 
 interface Props {
   value: number | undefined;
+  color?: string;
 }
 
 export function AnimatedNumber(props: Props) {
@@ -32,7 +33,7 @@ export function AnimatedNumber(props: Props) {
   }, [props.value]);
 
   return (
-    <span ref={element} className="animated">
+    <span ref={element} style={{ color: props.color }} className="animated">
       {displayValue}
     </span>
   );
