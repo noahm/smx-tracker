@@ -24,7 +24,7 @@
       {
         "name": "panel",
         "title": "SMX Tracker",
-        "width": 5,
+        "width": 3,
         "file": "panel.html",
         "headerColor": "#525F78"
       }

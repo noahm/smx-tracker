@@ -197,7 +197,7 @@ var _animatedNumber = require("./animatedNumber");
 function PlayerStats(props) {
     const [stats] = (0, _useReplicant.useReplicant)("playerStats");
     const [displayMode] = (0, _useReplicant.useReplicant)("displayMode", "wild");
-    const [displayStyle] = (0, _useReplicant.useReplicant)("displayStyle", "inTotal");
+    const [displayStyle] = (0, _useReplicant.useReplicant)("displayStyle", "inTotal") || "inTotal";
     const [scoreSummary] = (0, _useReplicant.useReplicant)("scoreSummary");
     if (!stats) {
         if (props.silentFailure) return null;

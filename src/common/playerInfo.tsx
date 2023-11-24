@@ -16,7 +16,7 @@ interface Props {
 export function PlayerStats(props: Props) {
   const [stats] = useReplicant<PlayerStatsType>('playerStats');
   const [displayMode] = useReplicant<DisplayMode>('displayMode', 'wild');
-  const [displayStyle] = useReplicant<'inTotal' | 'byLevel'>('displayStyle', 'inTotal');
+  const [displayStyle] = useReplicant<'inTotal' | 'byLevel'>('displayStyle', 'inTotal') || 'inTotal';
   const [scoreSummary] = useReplicant<ScoreSummary>('scoreSummary');
 
   if (!stats) {
