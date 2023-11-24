@@ -1,0 +1,1 @@
+{"mappings":"AAAA","sources":["src/common/animatedNumber.css"],"sourcesContent":["span.animated {\n  font-weight: 700;\n  font-size: 24pt;\n  display: inline-block;\n  color: orange;\n  text-shadow: currentColor 0px 0px 0px;\n  -webkit-text-stroke: #fff 1px;\n}\n"],"names":[],"version":3,"file":"mode-count.1c898dc6.css.map","sourceRoot":"../"}

@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;AAIA;;;;;;AAMA","sources":["src/common/playerInfo.css"],"sourcesContent":["table {\n  border-collapse: collapse;\n}\n\nth,\ntd {\n  border: 1px solid black;\n  font-variant-numeric: tabular-nums;\n  padding: 5px;\n}\ntd {\n  text-align: right;\n}\n"],"names":[],"version":3,"file":"index.0810e4e1.css.map","sourceRoot":"../"}
