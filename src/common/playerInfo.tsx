@@ -7,6 +7,7 @@ import apcImg from './images/7.png';
 import sixImg from './images/6.png';
 import fiveImg from './images/5.png';
 import fourImg from './images/4.png';
+import { AnimatedNumber } from './animatedNumber';
 
 interface Props {
   silentFailure?: boolean;
@@ -42,33 +43,45 @@ export function PlayerStats(props: Props) {
           <th>
             <img height="30px" src={apcImg} />
           </th>
-          <td>{inTotal?.apcs}</td>
+          <td>
+            <AnimatedNumber value={inTotal?.apcs} />
+          </td>
         </tr>
         <tr>
           <th>
             <img height="30px" src={sixImg} />
           </th>
-          <td>{inTotal?.sixStar}</td>
+          <td>
+            <AnimatedNumber value={inTotal?.sixStar} />
+          </td>
         </tr>
         <tr>
           <th>
             <img height="30px" src={fiveImg} />
           </th>
-          <td>{inTotal?.fiveStar}</td>
+          <td>
+            <AnimatedNumber value={inTotal?.fiveStar} />
+          </td>
         </tr>
         <tr>
           <th>
             <img height="30px" src={fourImg} />
           </th>
-          <td>{inTotal?.fourStar}</td>
+          <td>
+            <AnimatedNumber value={inTotal?.fourStar} />
+          </td>
         </tr>
         <tr>
-          <th>Full Combos</th>
-          <td>{inTotal?.fullCombos}</td>
+          <th>FCs</th>
+          <td>
+            <AnimatedNumber value={inTotal?.fullCombos} />
+          </td>
         </tr>
         <tr>
-          <th>Passes</th>
-          <td>{inTotal?.passes}</td>
+          <th>Pass</th>
+          <td>
+            <AnimatedNumber value={inTotal?.passes} />
+          </td>
         </tr>
       </>
     );
@@ -89,7 +102,9 @@ export function PlayerStats(props: Props) {
             <img height="30px" src={apcImg} />
           </th>
           {levels.map((lvl) => (
-            <td key={lvl}>{byLevel[lvl].apcs}</td>
+            <td key={lvl}>
+              <AnimatedNumber value={byLevel[lvl]?.apcs} />
+            </td>
           ))}
         </tr>
         <tr>
@@ -97,7 +112,9 @@ export function PlayerStats(props: Props) {
             <img height="30px" src={sixImg} />
           </th>
           {levels.map((lvl) => (
-            <td key={lvl}>{byLevel[lvl].sixStar}</td>
+            <td key={lvl}>
+              <AnimatedNumber value={byLevel[lvl]?.sixStar} />
+            </td>
           ))}
         </tr>
         <tr>
@@ -105,7 +122,9 @@ export function PlayerStats(props: Props) {
             <img height="30px" src={fiveImg} />
           </th>
           {levels.map((lvl) => (
-            <td key={lvl}>{byLevel[lvl].fiveStar}</td>
+            <td key={lvl}>
+              <AnimatedNumber value={byLevel[lvl]?.fiveStar} />
+            </td>
           ))}
         </tr>
         <tr>
@@ -113,19 +132,25 @@ export function PlayerStats(props: Props) {
             <img height="30px" src={fourImg} />
           </th>
           {levels.map((lvl) => (
-            <td key={lvl}>{byLevel[lvl].fourStar}</td>
+            <td key={lvl}>
+              <AnimatedNumber value={byLevel[lvl]?.fourStar} />
+            </td>
           ))}
         </tr>
         <tr>
-          <th>Full Combos</th>
+          <th>FCs</th>
           {levels.map((lvl) => (
-            <td key={lvl}>{byLevel[lvl].fullCombos}</td>
+            <td key={lvl}>
+              <AnimatedNumber value={byLevel[lvl]?.fullCombos} />
+            </td>
           ))}
         </tr>
         <tr>
-          <th>Passes</th>
+          <th>Pass</th>
           {levels.map((lvl) => (
-            <td key={lvl}>{byLevel[lvl].passes}</td>
+            <td key={lvl}>
+              <AnimatedNumber value={byLevel[lvl]?.passes} />
+            </td>
           ))}
         </tr>
       </>
