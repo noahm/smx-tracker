@@ -23527,7 +23527,7 @@ function Panel() {
     return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, /*#__PURE__*/ (0, _reactDefault.default).createElement("p", {
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 17,
+            lineNumber: 16,
             columnNumber: 7
         },
         __self: this
@@ -23536,14 +23536,14 @@ function Panel() {
         target: "_blank",
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 19,
+            lineNumber: 18,
             columnNumber: 9
         },
         __self: this
     }, "statmaniax")), /*#__PURE__*/ (0, _reactDefault.default).createElement("p", {
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 24,
+            lineNumber: 23,
             columnNumber: 7
         },
         __self: this
@@ -23555,14 +23555,14 @@ function Panel() {
         },
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 25,
+            lineNumber: 24,
             columnNumber: 7
         },
         __self: this
     }), /*#__PURE__*/ (0, _reactDefault.default).createElement("p", {
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 33,
+            lineNumber: 32,
             columnNumber: 7
         },
         __self: this
@@ -23573,7 +23573,7 @@ function Panel() {
         },
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 35,
+            lineNumber: 34,
             columnNumber: 9
         },
         __self: this
@@ -23581,7 +23581,7 @@ function Panel() {
         value: "basic",
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 40,
+            lineNumber: 39,
             columnNumber: 11
         },
         __self: this
@@ -23589,7 +23589,7 @@ function Panel() {
         value: "easy",
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 41,
+            lineNumber: 40,
             columnNumber: 11
         },
         __self: this
@@ -23597,7 +23597,7 @@ function Panel() {
         value: "hard",
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 42,
+            lineNumber: 41,
             columnNumber: 11
         },
         __self: this
@@ -23605,7 +23605,7 @@ function Panel() {
         value: "wild",
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 43,
+            lineNumber: 42,
             columnNumber: 11
         },
         __self: this
@@ -23613,7 +23613,7 @@ function Panel() {
         value: "dual",
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 44,
+            lineNumber: 43,
             columnNumber: 11
         },
         __self: this
@@ -23621,88 +23621,14 @@ function Panel() {
         value: "full",
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 45,
+            lineNumber: 44,
             columnNumber: 11
         },
         __self: this
     }, "Full"))), /*#__PURE__*/ (0, _reactDefault.default).createElement("p", {
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 49,
-            columnNumber: 7
-        },
-        __self: this
-    }, "Stat for solo count:", " ", /*#__PURE__*/ (0, _reactDefault.default).createElement("select", {
-        value: singleCountStat,
-        onChange: (e)=>{
-            updateSingleCountStat(e.currentTarget.value);
-        },
-        __source: {
-            fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 51,
-            columnNumber: 9
-        },
-        __self: this
-    }, /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
-        value: "passes",
-        __source: {
-            fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 56,
-            columnNumber: 11
-        },
-        __self: this
-    }, "Passes"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
-        value: "fullCombos",
-        __source: {
-            fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 57,
-            columnNumber: 11
-        },
-        __self: this
-    }, "Full Combos"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
-        value: "threeStar",
-        __source: {
-            fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 58,
-            columnNumber: 11
-        },
-        __self: this
-    }, "3 Stars"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
-        value: "fourStar",
-        __source: {
-            fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 59,
-            columnNumber: 11
-        },
-        __self: this
-    }, "4 Stars"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
-        value: "fiveStar",
-        __source: {
-            fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 60,
-            columnNumber: 11
-        },
-        __self: this
-    }, "5 Stars"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
-        value: "sixStar",
-        __source: {
-            fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 61,
-            columnNumber: 11
-        },
-        __self: this
-    }, "6 Stars"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
-        value: "apcs",
-        __source: {
-            fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 62,
-            columnNumber: 11
-        },
-        __self: this
-    }, "APCs"))), /*#__PURE__*/ (0, _reactDefault.default).createElement("p", {
-        __source: {
-            fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 66,
+            lineNumber: 48,
             columnNumber: 7
         },
         __self: this
@@ -23713,7 +23639,7 @@ function Panel() {
         },
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 68,
+            lineNumber: 50,
             columnNumber: 9
         },
         __self: this
@@ -23721,7 +23647,7 @@ function Panel() {
         value: "inTotal",
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 73,
+            lineNumber: 55,
             columnNumber: 11
         },
         __self: this
@@ -23729,11 +23655,85 @@ function Panel() {
         value: "byLevel",
         __source: {
             fileName: "src/dashboard/Panel.tsx",
-            lineNumber: 74,
+            lineNumber: 56,
             columnNumber: 11
         },
         __self: this
-    }, "By Difficulty Lvl"))));
+    }, "By Difficulty Lvl"))), /*#__PURE__*/ (0, _reactDefault.default).createElement("p", {
+        __source: {
+            fileName: "src/dashboard/Panel.tsx",
+            lineNumber: 60,
+            columnNumber: 7
+        },
+        __self: this
+    }, "Stat for solo count:", " ", /*#__PURE__*/ (0, _reactDefault.default).createElement("select", {
+        value: singleCountStat,
+        onChange: (e)=>{
+            updateSingleCountStat(e.currentTarget.value);
+        },
+        __source: {
+            fileName: "src/dashboard/Panel.tsx",
+            lineNumber: 62,
+            columnNumber: 9
+        },
+        __self: this
+    }, /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
+        value: "passes",
+        __source: {
+            fileName: "src/dashboard/Panel.tsx",
+            lineNumber: 67,
+            columnNumber: 11
+        },
+        __self: this
+    }, "Passes"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
+        value: "fullCombos",
+        __source: {
+            fileName: "src/dashboard/Panel.tsx",
+            lineNumber: 68,
+            columnNumber: 11
+        },
+        __self: this
+    }, "Full Combos"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
+        value: "threeStar",
+        __source: {
+            fileName: "src/dashboard/Panel.tsx",
+            lineNumber: 69,
+            columnNumber: 11
+        },
+        __self: this
+    }, "3 Stars"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
+        value: "fourStar",
+        __source: {
+            fileName: "src/dashboard/Panel.tsx",
+            lineNumber: 70,
+            columnNumber: 11
+        },
+        __self: this
+    }, "4 Stars"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
+        value: "fiveStar",
+        __source: {
+            fileName: "src/dashboard/Panel.tsx",
+            lineNumber: 71,
+            columnNumber: 11
+        },
+        __self: this
+    }, "5 Stars"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
+        value: "sixStar",
+        __source: {
+            fileName: "src/dashboard/Panel.tsx",
+            lineNumber: 72,
+            columnNumber: 11
+        },
+        __self: this
+    }, "6 Stars"), /*#__PURE__*/ (0, _reactDefault.default).createElement("option", {
+        value: "apcs",
+        __source: {
+            fileName: "src/dashboard/Panel.tsx",
+            lineNumber: 73,
+            columnNumber: 11
+        },
+        __self: this
+    }, "APCs"))));
 }
 
 },{"react":"bH1AQ","../common/useReplicant":"7922I","../common/fieldForm":"lluec","@parcel/transformer-js/src/esmodule-helpers.js":"hvLRG"}],"7922I":[function(require,module,exports) {

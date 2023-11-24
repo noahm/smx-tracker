@@ -1,7 +1,6 @@
 import React from 'react';
 import { useReplicant } from '../common/useReplicant';
 import { FieldForm } from '../common/fieldForm';
-import { PlayerStats } from '../common/playerInfo';
 import type { DisplayMode, PlayerId, Summary } from '../types/schemas';
 
 export function Panel() {
@@ -47,6 +46,18 @@ export function Panel() {
       </p>
 
       <p>
+        Display Style:{' '}
+        <select
+          value={displayStyle}
+          onChange={(e) => {
+            updateDisplayStyle(e.currentTarget.value as typeof displayStyle);
+          }}>
+          <option value="inTotal">Totals</option>
+          <option value="byLevel">By Difficulty Lvl</option>
+        </select>
+      </p>
+
+      <p>
         Stat for solo count:{' '}
         <select
           value={singleCountStat}
@@ -60,18 +71,6 @@ export function Panel() {
           <option value="fiveStar">5 Stars</option>
           <option value="sixStar">6 Stars</option>
           <option value="apcs">APCs</option>
-        </select>
-      </p>
-
-      <p>
-        Display Style:{' '}
-        <select
-          value={displayStyle}
-          onChange={(e) => {
-            updateDisplayStyle(e.currentTarget.value as typeof displayStyle);
-          }}>
-          <option value="inTotal">Totals</option>
-          <option value="byLevel">By Difficulty Lvl</option>
         </select>
       </p>
     </>

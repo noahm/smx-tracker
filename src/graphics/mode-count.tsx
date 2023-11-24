@@ -30,7 +30,7 @@ export function Index() {
   const [scoreSummary] = useReplicant<ScoreSummary>('scoreSummary');
   const [stat] = useReplicant<keyof Summary>('singleCountStat');
 
-  const value = scoreSummary?.[mode]?.inTotal?.[stat ?? 'passes'];
+  const value = scoreSummary?.[mode]?.inTotal?.[stat ?? 'fullCombos'];
   return <AnimatedNumber value={value} color={color} />;
 }
 

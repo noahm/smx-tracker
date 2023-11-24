@@ -187,7 +187,7 @@ else color = colorBank.find((c)=>c.mode === mode)?.color;
 function Index() {
     const [scoreSummary] = (0, _useReplicant.useReplicant)("scoreSummary");
     const [stat] = (0, _useReplicant.useReplicant)("singleCountStat");
-    const value = scoreSummary?.[mode]?.inTotal?.[stat ?? "passes"];
+    const value = scoreSummary?.[mode]?.inTotal?.[stat ?? "fullCombos"];
     return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _animatedNumber.AnimatedNumber), {
         value: value,
         color: color,
